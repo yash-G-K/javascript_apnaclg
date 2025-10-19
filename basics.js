@@ -39,31 +39,84 @@
 // // conditional statements in js
 // //else if ladder in js
 
-age = 25;
-if(age<18){
-    console.log("you are a minor");
-}   
-else if(age>=18 && age<60){
-    console.log("you are an adult");
-}       
-else if(age>=60){
-    console.log("you are a senior citizen");
-}
+// age = 25;
+// if(age<18){
+//     console.log("you are a minor");
+// }   
+// else if(age>=18 && age<60){
+//     console.log("you are an adult");
+// }       
+// else if(age>=60){
+//     console.log("you are a senior citizen");
+// }
 
-//nestwd if else in js
-let num = 10;
-if(num%2==0){
-    if(num%3==0){
-        console.log("the number is divisible by 2 and 3");
-    }
-    else{
-        console.log("the number is divisible by 2 but not by 3");
-    }   
-}
-else{
-    console.log("the number is not divisible by 2");
-}
+// //nestwd if else in js
+// let num = 10;
+// if(num%2==0){
+//     if(num%3==0){
+//         console.log("the number is divisible by 2 and 3");
+//     }
+//     else{
+//         console.log("the number is divisible by 2 but not by 3");
+//     }   
+// }
+// else{
+//     console.log("the number is not divisible by 2");
+// }
 
 //truthy and falsy values in js
 // falsy values : 0, "", null, undefined, NaN, false
 // truthy values : all values except falsy values
+
+// switch case in js
+// let color = "red";
+// switch(color){
+//     case "red":
+//         console.log("the color is red");
+//         break;
+//     case "blue":
+//         console.log("the color is blue");
+//         break;
+//     case "green":
+//         console.log("the color is green");
+//         break;
+//     default:
+//         console.log("the color is not red, blue or green");
+// }
+
+day = 3;
+switch(day){
+    case 1:
+        console.log("monday");
+        break;
+    case 2:
+        console.log("tuesday");
+        break;
+    case 3:
+        console.log("wednesday");
+        break;
+    case 4:
+        console.log("thursday");
+        break;
+    case 5:
+        console.log("friday");
+        break;
+    case 6:
+        console.log("saturday");
+        break;
+    case 7:
+        console.log("sunday");
+        break;
+    default:
+        console.log("invalid day");
+}
+
+//alerts, prompts and confirms in js
+// alert("this is an alert"); // this will show an alert box with the given message
+// let name = prompt("enter your name");// this will show a prompt box to enter the name
+// console.log("hello " + name);
+
+
+let name = prompt("enter your name");
+let age = prompt("enter your age");
+alert(name + " is " + age + " years old");
