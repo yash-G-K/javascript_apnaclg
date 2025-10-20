@@ -117,6 +117,23 @@ switch(day){
 // console.log("hello " + name);
 
 
-let name = prompt("enter your name");
-let age = prompt("enter your age");
-alert(name + " is " + age + " years old");
+// let name = prompt("enter your name");
+// let age = prompt("enter your age");
+// alert(name + " is " + age + " years old");
+
+// String methods in js
+// strings are immutable in js.
+let str = "  Hello World  ";
+console.log(str.length);
+console.log(str.trim());
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str.slice(0,5));
+console.log(str.slice(-2));
+console.log(str.replace("World", "JavaScript"));
+console.log(str.charAt(0));
+console.log(str.indexOf("o"));
+console.log(str.lastIndexOf("o"));
+console.log(str.includes("World"));
+console.log(str.toUpperCase().trim());    
+console.log(str.repeat(3));
