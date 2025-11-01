@@ -68,9 +68,37 @@
 
 
 // class list property
-let myElement = document.getElementById('myElement');
-myElement.classList.add('newClass'); // add a class
-myElement.classList.remove('oldClass'); // remove a class
-myElement.classList.toggle('activeClass'); // toggle a class
-my = myElement.classList.contains('newClass'); // check if class exists
-console.log(my); // true or false
+// let myElement = document.getElementById('myElement');
+// myElement.classList.add('newClass'); // add a class
+// myElement.classList.remove('oldClass'); // remove a class
+// myElement.classList.toggle('activeClass'); // toggle a class
+// my = myElement.classList.contains('newClass'); // check if class exists
+// console.log(my); // true or false
+
+
+// Navigation properties
+// parent Element, children, firstChild, lastChild, nextSibling, previousSibling
+
+
+// Adding elements from page
+// let list = document.getElementById('myList');
+// let newItem = document.createElement('li'); // create a new list item
+// newItem.innerText = 'New Item'; // set text for the new item
+// list.appendChild(newItem); // add the new item to the list
+// // list.removeChild(list.firstElementChild); // remove the first item from the list
+
+// appendChild ,append, prepend,insertAdjacentElement.
+
+
+//removing elements
+// remove child , remove 
+
+
+
+
+// just practice
+// let p = document.createElement('p');
+// p.innerText = 'This is red color';
+// let body =document.querySelector('body');
+// body.appendChild(p);
+// p.style.color = 'red';
