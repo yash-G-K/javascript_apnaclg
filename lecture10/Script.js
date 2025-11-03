@@ -59,8 +59,47 @@
 
 
 // keyboard events
-let input = document.querySelector('input');
-input.addEventListener('keypress', function(e) {
-    console.log('Key down event!');
-    console.log(e.key);
+// let input = document.querySelector('input');
+// input.addEventListener('keydown', function(e) {
+//     console.log('Key down event!');
+//     console.log(e.key);
+//     console.log(e.code);
+//     console.log(e);
+// });
+
+
+// event .preventDefault()
+// let form = document.querySelector('form');
+// form.addEventListener('click', function(event) {
+//     e.preventDefault();
+//     console.dir(event);
+//     alert('You clicked the link!');
+// }
+// );
+
+
+// // Extracting data from event object
+// let input = document.querySelector('input');
+// input.addEventListener('keydown', function(e) {
+//     console.log(`You pressed the "${e.key}" key`);
+//     console.log(`Key code is: ${e.code}`);
+// });
+
+
+// change event and input event
+
+let user = document.querySelector('#username');
+
+// Triggered when the user leaves the input (after editing)
+user.addEventListener('change', function(e) {       
+    console.log("Input changed!");
+    console.log("Current value:", this.value);
 });
+
+// Triggered on every keystroke
+user.addEventListener('input', function(e) {
+    let p = document.querySelector('p');
+    p.innerText = this.value;
+    console.log("Typing:", this.value);
+});
+
