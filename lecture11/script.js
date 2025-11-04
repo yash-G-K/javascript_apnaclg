@@ -120,29 +120,29 @@
 
 
 // applying promises
-h1 = document.querySelector('h1');
-function changeColor(color,delay){
-    return new Promise((resolve,reject) => {
-    setTimeout (() => {
-        h1.style.color = color;
-        resolve("color changed to " + color);
-    },delay);
-});
-}
+// h1 = document.querySelector('h1');
+// function changeColor(color,delay){
+//     return new Promise((resolve,reject) => {
+//     setTimeout (() => {
+//         h1.style.color = color;
+//         resolve("color changed to " + color);
+//     },delay);
+// });
+// }
 
-changeColor('red',1000)
-.then(() => {
-    console.log("color changed to red");
-    return changeColor('orange',1000);
-})
-.then(() => {
-    console.log("color changed to orange");
-    return changeColor('green',1000);
-})
-.then(() => {
-    console.log("coloe changes to green");
-    return changeColor('pink' ,1000);
-})
-.catch(() =>{
-    console.log('failes to change the color');
-});
+// changeColor('red',1000)
+// .then(() => {
+//     console.log("color changed to red");
+//     return changeColor('orange',1000);
+// })
+// .then(() => {
+//     console.log("color changed to orange");
+//     return changeColor('green',1000);
+// })
+// .then(() => {
+//     console.log("coloe changes to green");
+//     return changeColor('pink' ,1000);
+// })
+// .catch(() =>{
+//     console.log('failes to change the color');
+// });
