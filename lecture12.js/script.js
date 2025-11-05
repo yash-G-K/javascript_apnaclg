@@ -110,6 +110,8 @@
 //headers - used to send additional information with an HTTP request or response
 // They are key-value pairs that provide metadata about the request or response
 // Common headers include Content-Type, Authorization, User-Agent, etc.
+//fetch means to make network requests similar to XMLHttpRequest (XHR)
+// It is a modern, promise-based API that provides a more powerful and flexible way to make HTTP requests
 
 
 // our first API request using fetch
@@ -128,14 +130,120 @@
 
 
 // Using async-await with fetch
-let url = "https://catfact.ninja/fact";
-async function fetchCatFact(){
+// let url = "https://catfact.ninja/fact";
+// async function fetchCatFact(){
+//     try {
+//         let res = await fetch(url);
+//         res = await res.json();
+//         console.log("Cat Fact:", res.fact);
+//         console.log(res);
+//     } catch(e){
+//         console.error("Error fetching data:", e);
+//     }
+// }
+
+
+//Axios - popular JavaScript library used to make HTTP requests from the browser or Node.js
+// It is promise-based and provides an easy-to-use API for making requests and handling responses
+
+
+// let btn = document.getElementById("btn");
+// let url2= "https://dog.ceo/api/breeds/image/random";
+
+// btn.addEventListener("click", async () =>{
+//     let imageUrl  = await getImage();
+//     console.log(imageUrl);
+//     let img = document.querySelector("#result");
+//     img.setAttribute("src", imageUrl);
+
+// });
+// async function getImage(){
+//     try {
+//         let res = await axios.get(url2);
+//         return res.data.message;
+//     }
+//     catch(e){
+//         console.error("Error fetching data:", e);
+//         return "no image found";
+//     }
+// }
+
+// btn.addEventListener("click", async () =>{
+//     let fact  = await fetchCatFact();
+//     console.log(fact);
+// });
+// async function fetchCatFact(){
+//     try {
+//         let res = await axios.get("https://catfact.ninja/fact");
+//         console.log("Cat Fact:", res.data.fact);
+//         console.log(res);
+//     }
+//     catch(e){
+//         console.error("Error fetching data:", e);
+//     }
+// }
+
+
+// Axion headers example
+// const url = "https://icanhazdadjoke.com/";
+
+// async function get(){
+//     try {
+//         const config = {headers: {Accept : 'application/json'}};
+//         let res = await axios.get(url, config);
+//         console.log(res.data);
+//     }
+//     catch(e){
+//         console.error("Error fetching data:", e);
+//     }
+// }
+
+
+// Activity using query parameters with axios and strings.
+// const url = "https://api.agify.io";
+
+// async function getAge(){
+//     try {
+//         const name = "Michael";
+//         const config = {params: {name: name}};
+//         let res = await axios.get(url, config);
+//         console.log(`Predicted age for the name ${name} is ${res.data.age}`);
+//     }
+//     catch(e){
+//         console.error("Error fetching data:", e);
+//     }
+// }
+
+
+let url = "http://universities.hipolabs.com/search?name=";
+let btn = document.querySelector("button");
+
+btn.addEventListener("click", async () => {
+    let country = document.querySelector("input").value;
+    console.log(country);
+
+    let colleges = await getColleges(country);
+    console.log(colleges);
+    show(colleges);
+});
+
+function show(colleges) {
+    let ul = document.querySelector("ul");
+    ul.innerHTML = "";
+    colleges.forEach((college) => {
+        let li = document.createElement("li");
+        li.innerText = college.name;
+        ul.appendChild(li);
+    });
+}
+
+
+async function getColleges(country) {
     try {
-        let res = await fetch(url);
-        res = await res.json();
-        console.log("Cat Fact:", res.fact);
-        console.log(res);
-    } catch(e){
-        console.error("Error fetching data:", e);
+        let res = await axios.get(url + country);
+        return res.data;
+    } catch (e) {
+        console.log("error : ", e);
+        return [];
     }
 }
