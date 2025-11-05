@@ -31,34 +31,111 @@
 // }
 
 
-const h1 = document.querySelector("h1");
+// const h1 = document.querySelector("h1");
 
-function changeColor(color, delay) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let num = Math.floor(Math.random() * 5) + 1;
-            if (num > 3) {
-                reject("Promise rejected with number: " + num);
-            } else {
-                h1.style.color = color;
-                console.log(`Color changed to ${color}!`);
-                resolve(`Color changed to ${color}!`);
-            }
-        }, delay);
-    });
-}
+// function changeColor(color, delay) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let num = Math.floor(Math.random() * 5) + 1;
+//             if (num > 3) {
+//                 reject("Promise rejected with number: " + num);
+//             } else {
+//                 h1.style.color = color;
+//                 console.log(`Color changed to ${color}!`);
+//                 resolve(`Color changed to ${color}!`);
+//             }
+//         }, delay);
+//     });
+// }
 
-async function demo() {
+// async function demo() {
+//     try {
+//         await changeColor("red", 1000);
+//         await changeColor("orange", 1000);
+//         await changeColor("green", 1000);
+//         await changeColor("blue", 1000);
+//     } catch (err) {
+//         console.log("Error caught in the async function:");
+//         console.error(err); // Use console.error for better visibility
+//     }
+// }
+
+// // Call the async function to start the demo
+// demo();
+
+
+// APIs - Application Programming Interfaces
+// Fetch API - used to make network requests to retrieve resources from a server
+// It returns a promise that resolves to the Response object representing the response to the request
+// javascript object notation - JSON
+// used to transmit data between a server and a web application as text
+// It is easy for humans to read and write and easy for machines to parse and generate
+// JSON.parse - method that parses a JSON string and converts it into a JavaScript object
+// JSON.stringify - method that converts a JavaScript object into a JSON string
+// let jsonRes = {"fact":"Approximately 1/3 of cat owners think their pets are able to read their minds.", "length":78};
+// console.log(jsonRes.fact);
+
+// let jsonRes2 = JSON.parse('{"fact":"Cats have five toes on their front paws, but only four toes on their back paws.","length":76}');
+// console.log(jsonRes2.fact);
+
+
+// Testing APIS requests
+// AJAX - Asynchronous JavaScript and XML
+// used to send and receive data from a server asynchronously without interfering with the display and behavior of the existing page
+// XMLHttpRequest - built-in browser object that allows you to make HTTP requests to a server and load data back into the web page without refreshing it
+// Modern alternative to XMLHttpRequest is Fetch API
+
+
+// Http methods - GET, POST, PUT, DELETE
+// GET - used to retrieve data from a server
+// POST - used to send data to a server to create a new resource
+// PUT - used to update an existing resource on a server
+// DELETE - used to delete a resource from a server
+
+//Status codes
+// 1xx - Informational
+// 2xx - Success
+// 3xx - Redirection
+// 4xx - Client Error
+// 5xx - Server Error
+
+// Adding information to the URL
+// Query parameters - used to send additional information to the server in the URL
+// They are added to the end of the URL after a question mark (?)
+// // one example is shown below
+// https://api.example.com/data?param1=value1&param2=value2
+// Here, param1 and param2 are the query parameters with their respective values value1 and value2
+
+
+//headers - used to send additional information with an HTTP request or response
+// They are key-value pairs that provide metadata about the request or response
+// Common headers include Content-Type, Authorization, User-Agent, etc.
+
+
+// our first API request using fetch
+// let url = "https://catfact.ninja/fact";
+// fetch(url)
+// .then((response) => {
+//     console.log(response);
+//     response.json().then((data) => {
+//         console.log(data);
+//         console.log("Cat Fact:", data.fact);
+//     });
+// })
+// .catch((error) => {
+//     console.error("Error fetching data:", error);
+// });
+
+
+// Using async-await with fetch
+let url = "https://catfact.ninja/fact";
+async function fetchCatFact(){
     try {
-        await changeColor("red", 1000);
-        await changeColor("orange", 1000);
-        await changeColor("green", 1000);
-        await changeColor("blue", 1000);
-    } catch (err) {
-        console.log("Error caught in the async function:");
-        console.error(err); // Use console.error for better visibility
+        let res = await fetch(url);
+        res = await res.json();
+        console.log("Cat Fact:", res.fact);
+        console.log(res);
+    } catch(e){
+        console.error("Error fetching data:", e);
     }
 }
-
-// Call the async function to start the demo
-demo();
