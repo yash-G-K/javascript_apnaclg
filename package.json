@@ -1,0 +1,24 @@
+{
+  "name": "javascript-apnaclg",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/yash-G-K/javascript_apnaclg#readme",
+  "bugs": {
+    "url": "https://github.com/yash-G-K/javascript_apnaclg/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yash-G-K/javascript_apnaclg.git"
+  },
+  "license": "ISC",
+  "author": "yash kalbhute",
+  "type": "commonjs",
+  "main": "basics.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "type" : "module"
+  }
+}
