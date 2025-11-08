@@ -68,6 +68,8 @@ app.post('/submit', (req, res) => {
 
 //path parameters in express.js
 app.get("/:username/:id", (req, res) => {
+const followers = ["yash", "ajay", "sachin", "rahul"];
+    console.log(req.params);
     const { username, id } = req.params;
     res.send(`User Profile\nUsername: ${username}\nID: ${id}`);
 });
@@ -83,3 +85,6 @@ app.get("/search", (req, res) => {
 // This will output:
 // Search Results for: express
 // Page: 2
+
+//conditional statements in ejs
+//loops in ejs
